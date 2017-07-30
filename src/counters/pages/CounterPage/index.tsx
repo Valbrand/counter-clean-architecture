@@ -5,15 +5,17 @@ import { StoreState } from '../../../store';
 import { CounterViewData, createCounterViewData } from './CounterViewData';
 import { CounterWidget } from './components/CounterWidget';
 import { ChangeCounterInteractor } from '../../useCases/ChangeCounterInteractor';
+import { ToggleViewModeInteractor } from '../../../viewMode/useCases/ToggleViewModeInteractor';
 
 type CounterPageProps = {
   changeCounterInteractor: ChangeCounterInteractor;
   counter: CounterViewData;
+  toggleViewModeInteractor: ToggleViewModeInteractor;
 };
 
 const mapStateToProps = (state: StoreState): Partial<CounterPageProps> => {
   return {
-    counter: createCounterViewData(state.counter)
+    counter: createCounterViewData(state.counter, state.viewMode)
   };
 };
 
@@ -21,12 +23,18 @@ class CounterPage extends React.Component<CounterPageProps, {}> {
   render () {
     const {
       counter,
-      changeCounterInteractor
+      changeCounterInteractor,
+      toggleViewModeInteractor
     } = this.props;
 
     return (
       <div>
         <h1>Clean Architecture Sample</h1>
+
+        <button onClick={toggleViewModeInteractor.toggleViewMode}>
+          {counter.viewModeButtonText}
+        </button>
+
         <CounterWidget
           counter={counter}
           increment={changeCounterInteractor.increment}
