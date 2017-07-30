@@ -1,4 +1,4 @@
-import CounterGateway from '../gateways/CounterGateway';
+import { CounterGateway } from '../gateways/CounterGateway';
 
 export interface ChangeCounterInteractor {
   increment(): void;

@@ -3,19 +3,17 @@ import { CounterViewData } from '../CounterViewData';
 
 interface CounterWidgetProps {
   counter: CounterViewData;
-  showRomanNumeral: boolean;
   increment(): void;
   decrement(): void; 
 }
 
-const CounterWidget = (props: CounterWidgetProps) => {
-  const { counter, showRomanNumeral, increment, decrement } = props;
-  const counterValueText = showRomanNumeral ? counter.asRomanNumeral() : counter.value;
+export const CounterWidget = (props: CounterWidgetProps) => {
+  const { counter, increment, decrement } = props;
 
   return (
     <div>
       <h1>
-        {counterValueText}
+        {counter.value}
       </h1>
 
       <div>
@@ -30,5 +28,3 @@ const CounterWidget = (props: CounterWidgetProps) => {
     </div>
   );
 };
-
-export default CounterWidget;
