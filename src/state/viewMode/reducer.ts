@@ -1,6 +1,6 @@
 import { ViewModeActionTypes } from './types';
 import { ViewModeAction } from './actions';
-import { ViewMode } from '../ViewMode';
+import { ViewMode } from '../../entities/ViewMode';
 
 export type ViewModeState = ViewMode;
 

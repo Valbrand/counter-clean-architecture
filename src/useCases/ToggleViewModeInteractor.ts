@@ -1,4 +1,4 @@
-import { ViewModeGateway } from '../gateways/ViewModeGateway';
+import { ViewModeGateway } from './ViewModeGateway';
 
 export interface ToggleViewModeInteractor {
   toggleViewMode(): void;

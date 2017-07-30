@@ -1,4 +1,4 @@
-import Counter from '../entities/Counter';
+import { Counter } from '../../entities/Counter';
 import { CounterAction } from './actions';
 import { CounterActionTypes } from './types';
 

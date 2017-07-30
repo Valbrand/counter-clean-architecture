@@ -1,5 +1,5 @@
-import Counter from '../../entities/Counter';
-import { ViewMode } from '../../../viewMode/ViewMode';
+import { Counter } from '../../entities/Counter';
+import { ViewMode } from '../../entities/ViewMode';
 
 export interface CounterViewData {
   value: string;

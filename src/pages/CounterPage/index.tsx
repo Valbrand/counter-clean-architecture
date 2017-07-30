@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { StoreState } from '../../../store';
+import { StoreState } from '../../store';
 import { CounterViewData, createCounterViewData } from './CounterViewData';
 import { CounterWidget } from './components/CounterWidget';
 import { ChangeCounterInteractor } from '../../useCases/ChangeCounterInteractor';
-import { ToggleViewModeInteractor } from '../../../viewMode/useCases/ToggleViewModeInteractor';
+import { ToggleViewModeInteractor } from '../../useCases/ToggleViewModeInteractor';
 
 type CounterPageProps = {
   changeCounterInteractor: ChangeCounterInteractor;

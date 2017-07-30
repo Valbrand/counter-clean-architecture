@@ -1,7 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
-import { counterReducer, CounterState } from './counters/redux/reducer';
-import { viewModeReducer, ViewModeState } from './viewMode/redux/reducer';
+import { counterReducer, CounterState } from './state/counter/reducer';
+import { viewModeReducer, ViewModeState } from './state/viewMode/reducer';
 
 export type StoreState = {
   counter: CounterState

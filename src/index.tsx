@@ -2,14 +2,14 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import CounterPage from './counters/pages/CounterPage';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
-import { createReduxCounterGateway } from './counters/redux/ReduxCounterGateway';
-import { createReduxViewModeGateway } from './viewMode/redux/ReduxViewModeGateway';
-import { createChangeCounterInteractor } from './counters/useCases/ChangeCounterInteractor';
-import { createToggleViewModeInteractor } from './viewMode/useCases/ToggleViewModeInteractor';
 import './index.css';
+import CounterPage from './pages/CounterPage';
+import { createReduxCounterGateway } from './state/counter/ReduxCounterGateway';
+import { createReduxViewModeGateway } from './state/viewMode/ReduxViewModeGateway';
+import { createChangeCounterInteractor } from './useCases/ChangeCounterInteractor';
+import { createToggleViewModeInteractor } from './useCases/ToggleViewModeInteractor';
 
 const counterGateway = createReduxCounterGateway(store.dispatch);
 const changeCounterInteractor = createChangeCounterInteractor(counterGateway);
