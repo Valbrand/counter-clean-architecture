@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { CounterViewData } from '../CounterViewData';
+import { ChangeCounterInteractor } from '../../../useCases/ChangeCounterInteractor';
 
 interface CounterWidgetProps {
   counter: CounterViewData;
-  increment(): void;
-  decrement(): void; 
+  changeCounterInteractor: ChangeCounterInteractor;
 }
 
 export const CounterWidget = (props: CounterWidgetProps) => {
-  const { counter, increment, decrement } = props;
+  const { counter, changeCounterInteractor } = props;
 
   return (
     <div>
@@ -17,11 +17,11 @@ export const CounterWidget = (props: CounterWidgetProps) => {
       </h1>
 
       <div>
-        <button onClick={increment}>
+        <button onClick={changeCounterInteractor.increment}>
           +
         </button>
 
-        <button onClick={decrement}>
+        <button onClick={changeCounterInteractor.decrement}>
           -
         </button>
       </div>

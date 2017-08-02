@@ -37,8 +37,7 @@ class CounterPage extends React.Component<CounterPageProps, {}> {
 
         <CounterWidget
           counter={counter}
-          increment={changeCounterInteractor.increment}
-          decrement={changeCounterInteractor.decrement}
+          changeCounterInteractor={changeCounterInteractor}
         />
       </div>
     );
