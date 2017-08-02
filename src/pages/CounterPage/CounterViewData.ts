@@ -1,5 +1,6 @@
 import { Counter } from '../../entities/Counter';
 import { ViewMode } from '../../entities/ViewMode';
+import romanize from '../../utils/romanize';
 
 export interface CounterViewData {
   value: string;
@@ -11,9 +12,9 @@ export function createCounterViewData (counter: Counter, viewMode: ViewMode): Co
     get value(): string {
       switch (viewMode) {
         case ViewMode.regular:
-          return counter.toString();
+          return counter.value.toString();
         case ViewMode.roman:
-          return romanize(counter);
+          return romanize(counter.value);
         default:
           throw new Error('Unexpected view mode');
       }
@@ -30,36 +31,4 @@ export function createCounterViewData (counter: Counter, viewMode: ViewMode): Co
       }
     }
   };
-}
-
-function romanize (n: number): string {
-  const romanDigits: [string, number][] = [
-    ['CM', 900], 
-    ['D', 500], 
-    ['CD', 400], 
-    ['C', 100], 
-    ['XC', 90], 
-    ['L', 50], 
-    ['XL', 40], 
-    ['X', 10], 
-    ['IX', 9], 
-    ['V', 5],
-    ['IV', 4],
-    ['I', 1]
-  ];
-
-  if (n === 0) {
-    return 'N';
-  }
-
-  return romanDigits.reduce(
-    (partialValue, [ romanDigit, value ], index) => {
-      while (n >= value) {
-        partialValue = partialValue + romanDigit;
-        n -= value;
-      }
-
-      return partialValue;
-    },
-    '');
 }

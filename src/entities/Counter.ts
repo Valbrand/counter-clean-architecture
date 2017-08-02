@@ -1,7 +1,20 @@
-export type Counter = number;
+export interface Counter {
+  readonly value: number;
 
-export namespace Counter {
-  export function of(n: number = 0): Counter {
-    return n;
-  }
+  increment(): Counter;
+  decrement(): Counter;
+}
+
+export function createCounter(value: number = 0): Counter {
+  return {
+    value,
+
+    increment (): Counter {
+      return createCounter(value + 1);
+    },
+
+    decrement (): Counter {
+      return createCounter(value - 1);
+    }
+  };
 }
