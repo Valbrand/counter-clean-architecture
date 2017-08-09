@@ -1,20 +1,13 @@
-export interface Counter {
-  readonly value: number;
-
-  increment(): Counter;
-  decrement(): Counter;
-}
+export type Counter = number;
 
 export function createCounter(value: number = 0): Counter {
-  return {
-    value,
+  return value;
+}
 
-    increment (): Counter {
-      return createCounter(value + 1);
-    },
+export function increment(counter: Counter): Counter {
+  return createCounter(counter + 1);
+}
 
-    decrement (): Counter {
-      return createCounter(value - 1);
-    }
-  };
+export function decrement(counter: Counter): Counter {
+  return createCounter(counter - 1);
 }

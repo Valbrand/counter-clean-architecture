@@ -2,6 +2,7 @@
   "name": "counter-clean-architecture",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.dvalbrand.com/counter-clean-architecture",
   "dependencies": {
     "@types/jest": "^20.0.5",
     "@types/node": "^8.0.17",

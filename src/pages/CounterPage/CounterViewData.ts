@@ -12,9 +12,9 @@ export function createCounterViewData (counter: Counter, viewMode: ViewMode): Co
     get value(): string {
       switch (viewMode) {
         case ViewMode.regular:
-          return counter.value.toString();
+          return counter.toString();
         case ViewMode.roman:
-          return romanize(counter.value);
+          return romanize(counter);
         default:
           throw new Error('Unexpected view mode');
       }
