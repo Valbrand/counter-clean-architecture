@@ -11,7 +11,7 @@ This is a sample application for a Medium article about Clean Architecture for w
 
 ## Português
 
-Essa é uma aplicação de exemplo para um artigo no Medium sobre Arquitetura Limpa para desenvolvimento web. Uma demo pode ser vista [nessa URL](http://www.dvalbrand.com/counter-clean-architecture/), e para rodar esse projeto localmente, tudo que você precisa executar após clonar o código-conte é:
+Essa é uma aplicação de exemplo para um artigo no Medium sobre Arquitetura Limpa para desenvolvimento web. Uma demo pode ser vista [nessa URL](http://www.dvalbrand.com/counter-clean-architecture/), e para rodar esse projeto localmente, tudo que você precisa executar após clonar o código-fonte é:
 
     npm install
     npm start
